@@ -1,18 +1,16 @@
-// Declare unique symbols for branding
+
 declare const majorBrand: unique symbol;
 declare const minorBrand: unique symbol;
 
 interface MajorCredits {
   credits: number;
-  readonly [majorBrand]: unique symbol;  // brand property
+  readonly [majorBrand]: unique symbol;
 }
 
 interface MinorCredits {
   credits: number;
-  readonly [minorBrand]: unique symbol;  // brand property
+  readonly [minorBrand]: unique symbol;
 }
-
-// Factory functions to create branded types
 function createMajorCredits(credits: number): MajorCredits {
   return { credits } as MajorCredits;
 }
@@ -21,7 +19,6 @@ function createMinorCredits(credits: number): MinorCredits {
   return { credits } as MinorCredits;
 }
 
-// Sum functions
 function sumMajorCredits(subject1: MajorCredits, subject2: MajorCredits): MajorCredits {
   return createMajorCredits(subject1.credits + subject2.credits);
 }
@@ -30,7 +27,6 @@ function sumMinorCredits(subject1: MinorCredits, subject2: MinorCredits): MinorC
   return createMinorCredits(subject1.credits + subject2.credits);
 }
 
-// Example usage (optional)
 const major1 = createMajorCredits(10);
 const major2 = createMajorCredits(20);
 const totalMajor = sumMajorCredits(major1, major2);
