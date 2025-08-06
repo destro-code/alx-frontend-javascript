@@ -42,8 +42,7 @@ export class Teacher implements TeacherInterface {
 
 // Task 5: createEmployee function
 export function createEmployee(salary: number | string): Director | Teacher {
-  // direct salary check
-  // @ts-ignore: bypass type check for comparison
+  // @ts-ignore: allow salary comparison
   if (salary < 500) {
     return new Teacher();
   }
@@ -63,7 +62,7 @@ export function executeWork(employee: Director | Teacher): string {
 }
 
 // Task 7: Subjects and teachClass function
-type Subjects = 'Math' | 'History';
+export type Subjects = 'Math' | 'History';
 
 export function teachClass(todayClass: Subjects): string {
   if (todayClass === 'Math') {
