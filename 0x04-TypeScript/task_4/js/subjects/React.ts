@@ -1,5 +1,5 @@
-/// <reference path="./Teacher.ts"/>
-/// <reference path="./Subject.ts"/>
+/// <reference path="./Teacher.ts" />
+/// <reference path="./Subject.ts" />
 
 namespace Subjects {
   export class React extends Subject {
