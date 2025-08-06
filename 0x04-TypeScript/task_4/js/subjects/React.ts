@@ -1,20 +1,15 @@
-import { Subjects } from './Teacher';
-import { Subjects as SubjectNS } from './Subject';
+/// <reference path="./Teacher.ts"/>
+/// <reference path="./Subject.ts"/>
 
-export namespace Subjects {
-  export interface Teacher {
-    experienceTeachingReact?: number;
-  }
-
-  export class React extends SubjectNS.Subject {
+namespace Subjects {
+  export class React extends Subject {
     getRequirements(): string {
       return 'Here is the list of requirements for React';
     }
 
     getAvailableTeacher(): string {
-      const teacher = this.teacher;
-      if (teacher && teacher.experienceTeachingReact && teacher.experienceTeachingReact > 0) {
-        return `Available Teacher: ${teacher.firstName}`;
+      if (this.teacher.experienceTeachingReact && this.teacher.experienceTeachingReact > 0) {
+        return `Available Teacher: ${this.teacher.firstName}`;
       }
       return 'No available teacher';
     }
